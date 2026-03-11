@@ -1,4 +1,4 @@
-mod processing;
+mod commands;
 
 use std::io::{self, Write};
 
@@ -14,6 +14,6 @@ fn main() {
             .expect("Failed to read line");
 
         input = input.trim().to_string();
-        processing::process_command(&input);
+        commands::process_command(&input);
     }
 }
