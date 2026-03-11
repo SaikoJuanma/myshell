@@ -1,8 +1,10 @@
 mod commands;
 
+use commands::Shell;
 use std::io::{self, Write};
 
 fn main() {
+    let shell = Shell::new();
     loop {
         print!("$ ");
 
@@ -14,6 +16,6 @@ fn main() {
             .expect("Failed to read line");
 
         input = input.trim().to_string();
-        commands::process_command(&input);
+        shell.process_command(&input);
     }
 }
